@@ -117,7 +117,7 @@ Upon selecting "Simulated + Experimental Spectrum", a second window opens:
 |-----------|------------------------------------|----------------------------------------------------|
 | 994       | Hydrogen                           | Inglis-Teller density comparison                   |
 | 1022      | Hydrogen + Argon                   | Calibrated vs. uncalibrated comparison             |
-| 1171      | Argon                              | Heavy gas recognition                              |
+| 1171      | Argon_II                           | Heavy gas recognition                              |
 | 1228      | Hydrogen + Fluorine (impurity)     | Impurity analysis and simulation comparison        |
 | 2089–2183 | Helium                             | Density/temperature and line ratio tests           |
 | 2183      | Helium (full spectrum over time)   | Full-frame analysis                                |
