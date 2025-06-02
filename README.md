@@ -36,7 +36,7 @@ Required File Structure
 - Atomic line files must be placed in:
 
   ```bash
-  ~/ "OneDrive" / "Desktop" / "Codice_Laura" / "Atomic_Lines_NIST"
+  ~/ Path(__file__).resolve().parent / "Atomic_Lines_NIST"
   ```
 
   Example files:
