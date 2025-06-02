@@ -3,7 +3,7 @@ Interactive Spectroscopy – Analysis of Experimental and Simulated Spectra
 Author: Laura Lerza  
 Technologies Used: Python, PySimpleGUI, NumPy, Plotly  
 
-Description
+**Description**
 
 This interactive tool enables the analysis and comparison of experimental optical spectra (multi-frame) acquired from spectrometers with simulated spectra based on theoretical atomic line data (NIST database). It is designed primarily for plasma diagnostics.
 
@@ -11,11 +11,11 @@ The GUI-based application supports:
 - Time-resolved visualization of experimental spectra
 - Simulation of atomic spectra using Gaussian convolution
 - Combined analysis of experimental and simulated data
-- Calibration and annotation for different spectrometers
+
 
 ---
 
-Features
+**Features**
 
 - Interactive GUI built with PySimpleGUI
 - Plotly-based visualization with real-time sliders
@@ -30,13 +30,13 @@ Features
 
 ---
 
-Required File Structure
+**Required File Structure**
 
-- Experimental files (`.txt` or `.csv`) can be stored in any user-selected folder.
+- Experimental files (`.txt` or `.csv`) can be stored in any user-selected folder (in this case folder = `Ocean_Optics`).
 - Atomic line files must be placed in:
 
   ```bash
-  ~/ Path(__file__).resolve().parent / "Atomic_Lines_NIST"
+  Path(__file__).resolve().parent / "Atomic_Lines_NIST"
   ```
 
   Example files:
@@ -48,27 +48,27 @@ Required File Structure
 
 ---
 
-How to Run
+**How to Run**
 
-Prerequisites
+- Prerequisites
 
-Install required packages:
+  - Install required packages:
 
-```bash
-pip install PySimpleGUI numpy plotly
-```
+    ```bash
+    pip install PySimpleGUI numpy plotly
+    ```
 
-Run the Script
+  - Run the Script
 
-From terminal:
+    From terminal:
 
-```bash
-python Spectral_GUI.py
-```
+    ```bash
+    python Spectral_GUI.py
+    ```
 
 ---
 
-User Guide
+**User Guide**
 
 GUI Overview
 
@@ -81,7 +81,7 @@ GUI Overview
    - `Simulated + Experimental Spectrum`: Launch comparison window
    - `Exit`: Close the program
 
-Terminal Inputs (for Simulated Spectra)
+*Terminal Inputs (for Simulated Spectra)*
 
 After selecting "Simulated Spectrum", use the terminal to enter:
 
@@ -97,7 +97,7 @@ Enter `stop` to exit this mode.
 
 ---
 
-Combined Mode Features
+*Combined Mode Features*
 
 Upon selecting "Simulated + Experimental Spectrum", a second window opens:
 
@@ -109,9 +109,9 @@ Upon selecting "Simulated + Experimental Spectrum", a second window opens:
 
 ---
 
-Suggested Test Cases
+**Suggested Test Cases**
 
- Experimental Tests
+ *Experimental Tests*
 
 | Shot      | Fuel Type                          | Use Case                                           |
 |-----------|------------------------------------|----------------------------------------------------|
@@ -122,13 +122,13 @@ Suggested Test Cases
 | 2089–2183 | Helium                             | Density/temperature and line ratio tests           |
 | 2183      | Helium (full spectrum over time)   | Full-frame analysis                                |
 
-Simulated Spectra
+*Simulated Spectra*
 
 - Pure Hydrogen
 - Hydrogen + Fluorine
 - Combination (H+F+He)
 
-Combined (Experimental + Simulated)
+*Combined (Experimental + Simulated)*
 
 - 1228: Direct experimental/simulated overlay
 - 994: Theoretical density comparison
@@ -137,7 +137,7 @@ Combined (Experimental + Simulated)
 
 ---
 
-Notes
+**Notes**
 
 - Automatic wavelength calibration:
   - `Ocean Optics` → +1.17 nm
@@ -146,6 +146,6 @@ Notes
 
 ---
 
-Contact
+**Contact**
 
-For questions or suggestions, please contact: **[Laura Lerza](mail:laura.lerza@studio.unibo.it)**
+For questions or suggestions, please contact: Laura Lerza->mail:laura.lerza@studio.unibo.it
