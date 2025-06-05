@@ -116,9 +116,9 @@ Upon selecting "Simulated + Experimental Spectrum", a second window opens:
 | Shot      | Fuel Type                          | Use Case                                           |
 |-----------|------------------------------------|----------------------------------------------------|
 | 994       | Hydrogen                           | Inglis-Teller density comparison                   |
-| 1022      | Hydrogen + Argon                   | Calibrated vs. uncalibrated comparison             |
+| 1022      | Hydrogen_normalized_1022           | Calibrated vs. uncalibrated comparison             |
 | 1171      | Argon_II                           | Heavy gas recognition                              |
-| 1228      | Hydrogen + Fluorine (impurity)     | Impurity analysis and simulation comparison        |
+| 1228      | Hydrogen_I_normalized              | Impurity analysis and simulation comparison        |
 | 2089–2183 | Helium                             | Density/temperature and line ratio tests           |
 | 2183      | Helium (full spectrum over time)   | Full-frame analysis                                |
 
