@@ -164,6 +164,7 @@ Spectral_GUI/
 │   ├── Hydrogen_I_normalized.csv
 │   └── H_F_He.csv
 ├── Logo_Laura_resized.png
+├── Ocean_Optics 
 ├── images/
 │   ├── file_selection.png
 │   ├── scaling_modes.png
