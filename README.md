@@ -149,6 +149,7 @@ From the secondary window, use:
 - **Save calibrated spectrum in a txt file** — to export wavelength + intensity  
 - **Save fit data in a txt file** — to export fit results of simulations  
 
+-> Suggested shots to test: 2089, 2102, 2105, 2115, 2176 with trace4 (Helium_I)
 ---
 
 ## Project Structure
