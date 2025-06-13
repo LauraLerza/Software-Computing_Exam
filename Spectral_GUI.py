@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -193,11 +194,11 @@ while True:
             user_inp = ""
             user_stop = "stop"
             # Paths of atomic data files (cross-platform compatible)
-            PATH1 = base_data_path / "Argon_I.csv"
+            PATH1 = base_data_path / "Hydrogen_I_normalized_1022.csv"
             PATH2 = base_data_path / "Argon_II.csv"
-            PATH3 = base_data_path / "Fluorine_I.csv"
+            PATH3 = base_data_path / "Hydrogen_I.csv"
             PATH4 = base_data_path / "Helium_I.csv"
-            PATH5 = base_data_path / "Hydrogen_I.csv"
+            PATH5 = base_data_path / "Hydrogen_I_normalized.csv"
             PATH6 = base_data_path / "H_F_He.csv"
             # Loading theoretical spectral data (NIST database)
             data1 = np.loadtxt(PATH1, dtype=float)
@@ -221,7 +222,7 @@ while True:
             name6 = PATH6.stem
             # Low intensity line filter (different thresholds for each element)
             # Optimization: using NumPy masks to filter instead of list comprehension
-            if name1 == "Argon_I":
+            if name1 == "Hydrogen_I_normalized_1022":
                 mask1 = ycoords1 >= 2000
                 new_xcoords1 = xcoords1[mask1]
                 new_ycoords1 = ycoords1[mask1]
@@ -229,7 +230,7 @@ while True:
                 mask2 = ycoords2 >= 1500
                 new_xcoords2 = xcoords2[mask2]
                 new_ycoords2 = ycoords2[mask2]
-            if name3 == "Fluorine_I":
+            if name3 == "Hydrogen_I":
                 mask3 = ycoords3 >= 4000
                 new_xcoords3 = xcoords3[mask3]
                 new_ycoords3 = ycoords3[mask3]
@@ -237,7 +238,7 @@ while True:
                 mask4 = ycoords4 >= 200
                 new_xcoords4 = xcoords4[mask4]
                 new_ycoords4 = ycoords4[mask4]
-            if name5 == "Hydrogen_I":
+            if name5 == "Hydrogen_I_normalized":
                 mask5 = ycoords5 >= 9000
                 new_xcoords5 = xcoords5[mask5]
                 new_ycoords5 = ycoords5[mask5]
@@ -262,7 +263,7 @@ while True:
             np.seterr(divide='ignore', invalid='ignore')
             # Loop for user input (select dataset to simulate)print("Simulated spectrum mode. Type 'stop' to exit.")
             while user_inp != user_stop:
-                user_inp = input("Enter the track number to simulate (trace1=Argon_I, trace2=Argon_II, trace3=Fluorine_I, trace4=Helium_I, trace5=Hydrogen_I, trace6=H+F+He): ")
+                user_inp = input("Enter the track number to simulate (trace1=Hydrogen_normalized_1022, trace2=Argon_II, trace3=Hydrogen_I, trace4=Helium_I, trace5=Hydrogen_I_normalized, trace6=H+F+He): ")
                 if user_inp == "stop":
                     print("Closing simulated spectrum mode.")
                     break
@@ -469,12 +470,10 @@ while True:
                 # initial value of the slider (σ ≈ 0.04)
                 #initial_step = 4  
                 # --- Paths of the atomic lines files (using pathlib for macOS/Windows compatibility)
-                # base_dir = Path(r'C:\Users\lau65\OneDrive\Desktop\Codice_Laura\Atomic_Lines_NIST')
-                
-
-                PATH1 = str(Path(__file__).resolve().parent / "Atomic_Lines_NIST" / "Argon_I.csv")
+                                
+                PATH1 = str(Path(__file__).resolve().parent / "Atomic_Lines_NIST" / "Hydrogen_I_normalized_1022.csv")
                 PATH2 = str(Path(__file__).resolve().parent / "Atomic_Lines_NIST" / "Argon_II.csv")
-                PATH3 = str(Path(__file__).resolve().parent / "Atomic_Lines_NIST" / "Fluorine_I.csv")
+                PATH3 = str(Path(__file__).resolve().parent / "Atomic_Lines_NIST" / "Hydrogen_I.csv")
                 PATH4 = str(Path(__file__).resolve().parent / "Atomic_Lines_NIST" / "Helium_I.csv")
                 PATH5 = str(Path(__file__).resolve().parent / "Atomic_Lines_NIST" / "Hydrogen_I_normalized.csv")
                 PATH6 = str(Path(__file__).resolve().parent / "Atomic_Lines_NIST" / "H_F_He.csv")
@@ -502,7 +501,7 @@ while True:
                 name6 = Path(PATH6).stem
 
                 # --- Filter the weak atomic lines below a threshold (for each theoretical dataset)
-                if name1 == 'Argon_I':
+                if name1 == 'Hydrogen_I_normalized_1022':
                     new_ycoords1 = [i for i in ycoords1 if i >= 2000]
                     new_xcoords1 = [row[0] for row in data1 if row[1] >= 2000]
                 else:
@@ -518,7 +517,7 @@ while True:
                 xmin2 = np.amin(new_xcoords2); xmax2 = np.amax(new_xcoords2)
                 ymin2 = np.amin(new_ycoords2); ymax2 = np.amax(new_ycoords2)
 
-                if name3 == 'Fluorine_I':
+                if name3 == 'Hydrogen_I':
                     new_ycoords3 = [i for i in ycoords3 if i >= 4000]
                     new_xcoords3 = [row[0] for row in data3 if row[1] >= 4000]
                 else:
@@ -571,7 +570,7 @@ while True:
                 # --- User input loop to choose the simulated dataset (trace1..trace6)
                 while user_inp != user_stop:
                     print("To simulate the spectrum, insert the trace number:")
-                    print("trace1=Argon_I\ntrace2=Argon_II\ntrace3=Fluorine_I\ntrace4=Helium_I\ntrace5=Hydrogen_I_normalized\ntrace6=H_impurities_F_He")
+                    print("trace1=Hydrogen_normalized_1022\ntrace2=Argon_II\ntrace3=Hydrogen_I\ntrace4=Helium_I\ntrace5=Hydrogen_I_normalized\ntrace6=H_impurities_F_He")
                     print("N.B.: to close the program, digit the string 'stop'.")
                     user_inp = input()
                     if user_inp == "stop":
@@ -579,7 +578,7 @@ while True:
                         sys.exit()
 
                     elif user_inp == "trace1":
-                        # --- Definition of Plotly figure for Argon_I
+                        # --- Definition of Plotly figure for Hydrogen_I_normalized_1022
                         fig1 = go.Figure()
                         # --- Data for slider σ (array placeholder of length 100)
                         sigma_values = np.arange(0, 1, 0.01)  # 0.00, 0.01, ..., 0.99 (100 values)
@@ -897,7 +896,7 @@ while True:
                                            y0=shape_y0, y1=float(intensities5[k]),
                                            line=dict(color="cornflowerblue", width=1))
                         # Set combined title (for shot 1228 they used a specific title)
-                        fig5.update_layout(title_text="Experimental and simulated spectrum of plasma shot 1228",
+                        fig5.update_layout(title_text="Experimental and simulated spectrum of selected plasma shot",
                                            title_font_size=30, xaxis_title="Wavelength [nm]")
                         x_range5 = np.linspace(xmin5 - 20, xmax5 + 20, 60000)
                         intensities5 = norm_new_ycoords5 if mode_norm else new_ycoords5
@@ -963,7 +962,7 @@ while True:
                                            x0=new_xcoords6[k], x1=new_xcoords6[k],
                                            y0=shape_y0, y1=float(intensities6[k]),
                                            line=dict(color="cornflowerblue", width=1))
-                        fig6.update_layout(title_text="Experimental and simulated spectrum of plasma shot 1022",
+                        fig6.update_layout(title_text="Experimental and simulated spectrum of selected plasma shot",
                                            title_font_size=30, xaxis_title="Wavelength [nm]")
                         x_range6 = np.linspace(xmin6 - 20, xmax6 + 20, 60000)
                         intensities6 = norm_new_ycoords6 if mode_norm else new_ycoords6
@@ -1003,11 +1002,11 @@ while True:
                 sum_array = np.sum(y_array, axis=1)
                 unique_vals = np.unique(sum_array)
                 y_min_val = unique_vals[2] if unique_vals.size > 2 else unique_vals.min()
-                PATH1 = base_data_path / "Argon_I.csv"
+                PATH1 = base_data_path / "Hydrogen_I_normalized_1022.csv"
                 PATH2 = base_data_path / "Argon_II.csv"
-                PATH3 = base_data_path / "Fluorine_I.csv"
+                PATH3 = base_data_path / "Hydrogen_I.csv"
                 PATH4 = base_data_path / "Helium_I.csv"
-                PATH5 = base_data_path / "Hydrogen_I.csv"
+                PATH5 = base_data_path / "Hydrogen_I_normalized.csv"
                 data1 = np.loadtxt(PATH1, dtype=float)
                 data2 = np.loadtxt(PATH2, dtype=float)
                 data3 = np.loadtxt(PATH3, dtype=float)
@@ -1023,19 +1022,19 @@ while True:
                 name3 = PATH3.stem
                 name4 = PATH4.stem
                 name5 = PATH5.stem
-                if name1 == "Argon_I":
+                if name1 == "Hydrogen_I_normalized_1022":
                     mask1 = ycoords1 >= 2000
                     new_xcoords1 = xcoords1[mask1]; new_ycoords1 = ycoords1[mask1] * 300
                 if name2 == "Argon_II":
                     mask2 = ycoords2 >= 1500
                     new_xcoords2 = xcoords2[mask2]; new_ycoords2 = ycoords2[mask2]
-                if name3 == "Fluorine_I":
+                if name3 == "Hydrogen_I":
                     mask3 = ycoords3 >= 4000
                     new_xcoords3 = xcoords3[mask3]; new_ycoords3 = ycoords3[mask3]
                 if name4 == "Helium_I":
                     mask4 = ycoords4 >= 200
                     new_xcoords4 = xcoords4[mask4]; new_ycoords4 = ycoords4[mask4]
-                if name5 == "Hydrogen_I":
+                if name5 == "Hydrogen_I_normalized":
                     mask5 = ycoords5 >= 9000
                     new_xcoords5 = xcoords5[mask5]; new_ycoords5 = ycoords5[mask5]
                 def SumGauss(x, mu, sigma, intensity=1):
@@ -1051,12 +1050,12 @@ while True:
                     y_vals = gauss_matrix * intensity
                     return np.sum(y_vals, axis=1)
                 np.seterr(divide='ignore', invalid='ignore')
-                print("Modalità spettro combinato (somma conteggi). Digitare 'stop' per uscire.")
+                print("Combined spectrum mode (summed counts). Type 'stop' to exit.")
                 user_inp = ""
                 while user_inp != "stop":
-                    user_inp = input("Inserire il numero della traccia da simulare (trace1=Argon_I, trace2=Argon_II, trace3=Fluorine_I, trace4=Helium_I, trace5=Hydrogen_I): ")
+                    user_inp = input("Enter the track number to simulate (trace1=Hydrogen_normalized_1022, trace2=Argon_II, trace3=Hydrogen_I, trace4=Helium_I, trace5=Hydrogen_I_normalized): ")
                     if user_inp == "stop":
-                        print("Chiusura modalità combinata (somma conteggi).")
+                        print("Exiting combined spectrum mode (summed counts).")
                         break
                     elif user_inp == "trace1":
                         fig1 = go.Figure()
@@ -1190,3 +1189,4 @@ while True:
                         fig5.show()
         except Exception as e:
             print(f"Errore nell'analisi combinata: {e}")
+
