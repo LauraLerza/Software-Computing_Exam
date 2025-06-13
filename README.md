@@ -163,15 +163,52 @@ Spectral_GUI/
 │   ├── Hydrogen_I.csv
 │   ├── Hydrogen_I_normalized.csv
 │   └── H_F_He.csv
-├── Logo_Laura_resized.png
-├── Ocean_Optics 
+├── Ocean_Optics/
+│   ├── 1022_9.8ms.txt
+│   ├── 1026_9.8ms.txt
+│   ├── 1028_9.8ms.txt
+│   ├── 1030_9.8ms.txt
+│   ├── 1031_9.8ms.txt
+│   ├── 1032_9.8ms.txt
+│   ├── 1033_9.8ms.txt
+│   ├── 1034_9.8ms.txt
+│   ├── 1037_9.8ms.txt
+│   ├── 1038_9.8ms.txt
+│   ├── 1039_9.8ms.txt
+│   ├── 1042_9.8ms.txt
+│   ├── 1043_9.8ms.txt
+│   ├── 1044_9.8ms.txt
+│   ├── 1162_9.8ms.txt
+│   ├── 1163_20ms.txt
+│   ├── 1164_20ms.txt
+│   ├── 1165_20ms.txt
+│   ├── 1166_20ms.txt
+│   ├── 1167_20ms.txt
+│   ├── 1168_20ms.txt
+│   ├── 1169_20ms.txt
+│   ├── 1170_20ms.txt
+│   ├── 1171_20ms.txt
+│   ├── 1228_20ms.txt
+│   ├── 2089_15ms.txt
+│   ├── 2102_15ms.txt
+│   ├── 2105_15ms.txt
+│   ├── 2115_15ms.txt
+│   ├── 2176_15ms.txt
+│   ├── 2176_20ms.txt
+│   ├── 2183_20ms.txt
+│   ├── 2185_20ms.txt
+│   ├── 2189_20ms.txt
+│   ├── 2190_20ms.txt
+│   └── 994_5ms.txt
 ├── images/
 │   ├── file_selection.png
 │   ├── scaling_modes.png
 │   ├── experimental_spectrum.png
 │   ├── simulated_spectrum.png
 │   └── simulated_plus_experimental.png
+├── Logo_Laura_resized.png
 └── README.md
+
 ```
 > mark well: All atomic line `.csv` files are required for simulation features to function properly.
 
