@@ -140,7 +140,7 @@ Click **Simulated + Experimental Spectrum** to open a second window with:
 
 Use the same `traceX` names as above for simulated datasets.
 
-![Combined View](images/simulated_plus_experimental.png)
+![Combined View](images/Isimulated_plus_experimental.png)
 
 ### Save Output Files
 
